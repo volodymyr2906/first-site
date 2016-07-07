@@ -3,6 +3,7 @@ html{
     height:auto;
 }body{
     background: grey;
+    background-image:url("../images/fon2.jpg");
 }
 .main header { 
     position: relative;
@@ -10,7 +11,7 @@ html{
 body.main header nav{
     width: 100%;
     text-align: center;
-    background: #000;
+    background:  #fff;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -18,7 +19,7 @@ body.main header nav ul{
     max-width: 1100px;
     width: 100%;
     display: inline-block;
-    text-align: left;
+    text-align: top;
     margin: 0px;
     padding: 0px;
 }
@@ -27,9 +28,9 @@ body.main header nav li{
     margin-right: 2%;
 }
 body.main header nav a{
-    color: #fff;
+    color: #AF0000;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-family: Arial;
 }
 body.main header div {
@@ -102,8 +103,8 @@ body.main header div {
     background-repeat: no-repeat; 
 }
 #lightbox-secNav-btnClose {
-    width: 66px; /
-    float: right; /
+    width: 66px; 
+    float: right;
     padding-bottom: 0.7em;  
 }
 #lightbox-container-image-box{
@@ -120,4 +121,14 @@ body.main header div {
 }
 .gallarry a.dn{
     display: none;
+}
+#footer {
+    position: relative;
+    left: 0; bottom: 0;
+    padding: 40px;
+    background: #AF0000; 
+    color: #fff; 
+    width: 100%; 
+    font-family: Arial;
+    font-size: 15px;
 }
