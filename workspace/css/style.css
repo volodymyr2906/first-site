@@ -1,0 +1,123 @@
+body,
+html{
+    height:auto;
+}body{
+    background: grey;
+}
+.main header { 
+    position: relative;
+}
+body.main header nav{
+    width: 100%;
+    text-align: center;
+    background: #000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+body.main header nav ul{
+    max-width: 1100px;
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+}
+body.main header nav li{
+    display: inline-block;
+    margin-right: 2%;
+}
+body.main header nav a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial;
+}
+body.main header div {
+    background-image:url("../images/fon.jpg");
+    background-size: 100% 350px;
+    background-repeat: no-repeat;
+    height: 350px;
+    width:100%;
+}
+.team{
+    max-width: 1100px;
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+    background: #fff;
+}
+.team table{
+    width: 100%;
+    min-height:30px;
+}
+.team td{
+    width: 50%;
+    color:#000;
+    text-align: center;
+}	
+.team img{
+    float:left;
+    margin-right: 40px;
+    
+}
+.clr{
+    clear: both;
+}
+.team img+span~span{
+    margin-top: 10px;
+    display: block;
+}
+.team img+span{
+    margin-top: 40px;
+    display: block;
+}
+.team .main-img{
+    max-width: 60%;
+    display: inline-block;
+    margin:0px auto;
+    float: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.div1{
+    display: block;
+    width: 810px;
+    margin:0px auto;
+    
+}
+.gallarry{
+    background-color: #fff;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.gallarry a{
+    display: block;
+    float: left;
+    width: 49.8%;
+    height: 250px;
+    background-size: 1000px;
+    background-position:center center;
+    margin: 0.1%;
+    background-repeat: no-repeat; 
+}
+#lightbox-secNav-btnClose { /* стили отвечают за кнопку закрыть */
+    width: 66px; /* можно смело поменять ширину */
+    float: right; /* ... и позиционирование */
+    padding-bottom: 0.7em;  
+}
+#lightbox-container-image-box{
+    width: 90%!important; 
+    height: auto!important;
+}
+#lightbox-container-image-box #lightbox-image{
+    width: 100%;
+}
+#lightbox-container-image-data { /* это правило отвечает за панель с текстом */
+    padding: 0 10px;  /* можно настроить отступы... */
+    color: #666; /* ... цвет шрифта (понятно, что не только цвет - смело добавляй любые необходимые стили) */
+    display:none; /* А этой строки изначально нет. Добавляем ее, если панель не нужна. */
+}
+.gallarry a.dn{
+    display: none;
+}
