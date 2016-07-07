@@ -101,9 +101,9 @@ body.main header div {
     margin: 0.1%;
     background-repeat: no-repeat; 
 }
-#lightbox-secNav-btnClose { /* стили отвечают за кнопку закрыть */
-    width: 66px; /* можно смело поменять ширину */
-    float: right; /* ... и позиционирование */
+#lightbox-secNav-btnClose {
+    width: 66px; /
+    float: right; /
     padding-bottom: 0.7em;  
 }
 #lightbox-container-image-box{
@@ -113,10 +113,10 @@ body.main header div {
 #lightbox-container-image-box #lightbox-image{
     width: 100%;
 }
-#lightbox-container-image-data { /* это правило отвечает за панель с текстом */
-    padding: 0 10px;  /* можно настроить отступы... */
-    color: #666; /* ... цвет шрифта (понятно, что не только цвет - смело добавляй любые необходимые стили) */
-    display:none; /* А этой строки изначально нет. Добавляем ее, если панель не нужна. */
+#lightbox-container-image-data { 
+    padding: 0 10px; 
+    color: #666; 
+    display:none;
 }
 .gallarry a.dn{
     display: none;
