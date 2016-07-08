@@ -1,70 +1,32 @@
-/**
- * jQuery lightBox plugin
- * This jQuery plugin was inspired and based on Lightbox 2 by Lokesh Dhakar (http://www.huddletogether.com/projects/lightbox2/)
- * and adapted to me for use like a plugin from jQuery.
- * @name jquery-lightbox-0.5.js
- * @author Leandro Vieira Pinho - http://leandrovieira.com
- * @version 0.5
- * @date April 11, 2008
- * @category jQuery plugin
- * @copyright (c) 2008 Leandro Vieira Pinho (leandrovieira.com)
- * @license CCAttribution-ShareAlike 2.5 Brazil - http://creativecommons.org/licenses/by-sa/2.5/br/deed.en_US
- * @example Visit http://leandrovieira.com/projects/jquery/lightbox/ for more informations about this jQuery plugin
- */
-
-// Offering a Custom Alias suport - More info: http://docs.jquery.com/Plugins/Authoring#Custom_Alias
 (function($) {
-	/**
-	 * $ is an alias to jQuery object
-	 *
-	 */
+	
 	$.fn.lightBox = function(settings) {
-		// Settings to configure the jQuery lightBox plugin how you like
 		settings = jQuery.extend({
-			// Configuration related to overlay
-			overlayBgColor: 		'#000',		// (string) Background color to overlay; inform a hexadecimal value like: #RRGGBB. Where RR, GG, and BB are the hexadecimal values for the red, green, and blue values of the color.
-			overlayOpacity:			0.8,		// (integer) Opacity value to overlay; inform: 0.X. Where X are number from 0 to 9
-			// Configuration related to navigation
-			fixedNavigation:		false,		// (boolean) Boolean that informs if the navigation (next and prev button) will be fixed or not in the interface.
-			// Configuration related to images
-			imageLoading:			'images/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
-			imageBtnPrev:			'images/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
-			imageBtnNext:			'images/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
-			imageBtnClose:			'images/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
-			imageBlank:				'images/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
-			// Configuration related to container image box
-			containerBorderSize:	10,			// (integer) If you adjust the padding in the CSS for the container, #lightbox-container-image-box, you will need to update this value
-			containerResizeSpeed:	400,		// (integer) Specify the resize duration of container image. These number are miliseconds. 400 is default.
-			// Configuration related to texts in caption. For example: Image 2 of 8. You can alter either "Image" and "of" texts.
-			txtImage:				'Image',	// (string) Specify text "Image"
-			txtOf:					'of',		// (string) Specify text "of"
-			// Configuration related to keyboard navigation
-			keyToClose:				'c',		// (string) (c = close) Letter to close the jQuery lightBox interface. Beyond this letter, the letter X and the SCAPE key is used to.
-			keyToPrev:				'p',		// (string) (p = previous) Letter to show the previous image
-			keyToNext:				'n',		// (string) (n = next) Letter to show the next image.
-			// Donґt alter these variables in any way
+			overlayBgColor: 		'#000',	
+			overlayOpacity:			0.8,	
+			fixedNavigation:		false,	
+			imageLoading:			'images/lightbox-ico-loading.gif',		
+			imageBtnPrev:			'images/lightbox-btn-prev.gif',		
+			imageBtnNext:			'images/lightbox-btn-next.gif',			
+			imageBtnClose:			'images/lightbox-btn-close.gif',		
+			imageBlank:				'images/lightbox-blank.gif',	
+			containerBorderSize:	10,		
+			containerResizeSpeed:	400,
+			txtImage:				'Image',	
+			txtOf:					'of',		
+			keyToClose:				'c',	
+			keyToPrev:				'p',		
+			keyToNext:				'n',	
 			imageArray:				[],
 			activeImage:			0
 		},settings);
-		// Caching the jQuery object with all elements matched
-		var jQueryMatchedObj = this; // This, in this context, refer to jQuery object
-		/**
-		 * Initializing the plugin calling the start function
-		 *
-		 * @return boolean false
-		 */
+		var jQueryMatchedObj = this; 
 		function _initialize() {
-			_start(this,jQueryMatchedObj); // This, in this context, refer to object (link) which the user have clicked
-			return false; // Avoid the browser following the link
+			_start(this,jQueryMatchedObj); 
+			return false; 
 		}
-		/**
-		 * Start the jQuery lightBox plugin
-		 *
-		 * @param object objClicked The object (link) whick the user have clicked
-		 * @param object jQueryMatchedObj The jQuery object with all elements matched
-		 */
 		function _start(objClicked,jQueryMatchedObj) {
-			// Hime some elements to avoid conflict with overlay in IE. These elements appear above the overlay.
+		
 			$('embed, object, select').css({ 'visibility' : 'hidden' });
 			// Call the function to create the markup structure; style some elements; assign events in some elements.
 			_set_interface();
@@ -87,42 +49,6 @@
 			// Call the function that prepares image exibition
 			_set_image_to_view();
 		}
-		/**
-		 * Create the jQuery lightBox plugin interface
-		 *
-		 * The HTML markup will be like that:
-			<div id="jquery-overlay"></div>
-			<div id="jquery-lightbox">
-				<div id="lightbox-container-image-box">
-					<div id="lightbox-container-image">
-						<img src="../fotos/XX.jpg" id="lightbox-image">
-						<div id="lightbox-nav">
-							<a href="#" id="lightbox-nav-btnPrev"></a>
-							<a href="#" id="lightbox-nav-btnNext"></a>
-						</div>
-						<div id="lightbox-loading">
-							<a href="#" id="lightbox-loading-link">
-								<img src="../images/lightbox-ico-loading.gif">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div id="lightbox-container-image-data-box">
-					<div id="lightbox-container-image-data">
-						<div id="lightbox-image-details">
-							<span id="lightbox-image-details-caption"></span>
-							<span id="lightbox-image-details-currentNumber"></span>
-						</div>
-						<div id="lightbox-secNav">
-							<a href="#" id="lightbox-secNav-btnClose">
-								<img src="../images/lightbox-btn-close.gif">
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		 *
-		 */
 		function _set_interface() {
 			// Apply the HTML markup into body tag
 			$('body').append('<div id="jquery-overlay"></div><div id="jquery-lightbox"><div id="lightbox-container-image-box"><div id="lightbox-container-image"><img id="lightbox-image"><div style="" id="lightbox-nav"><a href="#" id="lightbox-nav-btnPrev"></a><a href="#" id="lightbox-nav-btnNext"></a></div><div id="lightbox-loading"><a href="#" id="lightbox-loading-link"><img src="' + settings.imageLoading + '"></a></div></div></div><div id="lightbox-container-image-data-box"><div id="lightbox-container-image-data"><div id="lightbox-image-details"><span id="lightbox-image-details-caption"></span><span id="lightbox-image-details-currentNumber"></span></div><div id="lightbox-secNav"><a href="#" id="lightbox-secNav-btnClose"><img src="' + settings.imageBtnClose + '"></a></div></div></div></div>');	
