@@ -7,27 +7,25 @@
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
         <link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="'https://fonts.googleapis.com/css?family=Quattrocento+Sans">
-
     </head>
     <body class="main">
         <header>
             <nav>
                 <ul>
                     <li><a href="index.html">Главная</a></li>
-                    <li><a href="#">Команда</a></li>
-                    <li><a href="#">Календарь гонок</a></li>
+                    <li><a href="#glava">Команда</a></li>
+                    <li><a href="#championship">Чемпионат</a></li>
                     <li><a href="history.html">История</a></li>
-                    <li><a href="#">Галерея</a></li>
+                    <li><a href="#gal">Галерея</a></li>
                 </ul>
             </nav>
             <div>
-                
             </div>
         </header>
         <div class="team">
+            <img class="fon" src="images/fon.jpg" alt="fon">
             <img class="main-img" src="images/sf16.png" alt="sf16">
-            <center><figcaption><b>Болид сезон 2016 - Ferrari SF16-H</b></figcaption></center>
+            <p><b>Болид сезон 2016 - Ferrari SF16-H</b></p>
             <table class="table1" style="height: 21px;" width="1096">
                 <tbody>
                 <tr>
@@ -52,21 +50,19 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <section class="gallarry">
-            <a href="images/img1.jpg"><img src="images/img1.jpg" height="113px" width="150px" alt="img"/></a>
-            <a href="images/img2.jpg"><img src="images/img2.jpg" height="113px" width="150px" alt="img"/></a>
-            <a href="images/img3.jpg"><img src="images/img3.jpg" height="113px" width="150px" alt="img"/></a>
-            <a href="images/img4.jpg"><img src="images/img4.jpg" height="113px" width="150px" alt="img"/></a>
-            <a class="dn" href="images/img1.jpg"><img src="images/img1.jpg" height="113px" width="150px" alt="img"/></a>
-            <a class="dn" href="images/fon.jpg"><img src="images/fon.jpg" height="113px" width="150px" alt="img"/></a>
-            <a class="dn" href="images/fon.jpg"><img src="images/fon.jpg" height="113px" width="150px" alt="img"/></a>
-            <a class="dn" href="images/fon.jpg"><img src="images/fon.jpg" height="113px" width="150px" alt="img"/></a>
+            <p style="text-align: center;">Резервный пилот: Шарль Леклерк (Монако)</p>
+         <section class="gallarry" id="gal">
+            <a class="img1" href="images/img1.jpg"></a>
+            <a class="img2" href="images/img2.jpg"></a>
+            <a class="img3" href="images/img3.jpg"></a>
+            <a class="img4" href="images/img4.jpg"></a>
+            <a class="dn" href="images/img16.jpg"></a>
+            <a class="dn" href="images/img15.jpg"></a>
+            <a class="dn" href="images/img11.jpg"></a>
+            <a class="dn" href="images/img6.jpg"></a>
             <div class="clr"></div>
         </section>
-        <div class="team">
-        <p style="text-align: center;">Резервный пилот: Шарль Леклерк (Монако)</p>
-        <div class="div1">
+        <div class="div1" id="glava">
             <p style="text-align: center;"><strong>5 Себастьян Феттель</strong></p>
             <img src="images/fettel2.png" alt="Fettel">
             <span>Родился: 3.07.1987 в Хеппенхайме, Германия</span>
@@ -103,9 +99,17 @@
             <div class="clr"></div>
         </div>
         </div>
-        <div id="footer">
-               &copy; Volodymyr Tsyupyk
-         </div>
+        <div>
+            <img class="chs" id="championship" src="images/championship.jpg" alt="championship">
+        </div>
+        <footer>
+            <div class="footerWrap">
+                <span>&copy; Volodymyr Tsyupyk</span>
+                <a class="fc" href="https://www.facebook.com/volodymyr.tsyupyk"></a>
+                <a class="in" href="https://www.linkedin.com/nhome/?trk="></a>
+                <div class="clr"></div>
+            </div>
+        </footer>
         <script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/lightbox.js"></script>
         <script src="js/main.js"></script>
