@@ -210,9 +210,20 @@ body.main header nav a:hover{
     -o-transform: skew(-30deg);
     transform: skew(-30deg);
     border-right: 10px solid #2AB4A5 ;
-    display: inline-block;
-    margin-right: 15px;
+    display: block;
+    margin-right: 5px;
+    float: left;
     
+}
+.parallelogram td a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    width: 240px;
+}
+.parallelogram td a>span {
+    float: left;
+    margin-top: 6px;
 }
 .parallelogram {
     width: 100%;
@@ -241,7 +252,7 @@ body.main header nav a:hover{
 }
 .parallelogram td img{
     display: block;
-    min-width: 80%;
+    max-width: 100%;
     margin: 0px auto;
 }
 .histori img{
@@ -251,10 +262,23 @@ body.main header nav a:hover{
 .mh{
     text-align: center;
 }
+.main.mh header nav ul {
+    text-align: left;
+}
+.main.mh header nav ul li {
+    margin-left: 15px;
+}
  .histori{
      margin-top: 90px;
      display: inline-block;
- }   
+ } 
+.team h2 {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
 @media (max-width:767px){
     body.main header nav ul{
         background: #FFF;
